@@ -8,6 +8,8 @@ body {
 nav{
     background-color: rgb(2,54,109);
     padding: 10px;
+    position: fixed;
+    top: 0px;
 }
 nav div {
     display: inline-block;
@@ -25,58 +27,62 @@ nav a:hover{
 }
 .logo img {
     width: 80px;
-    margin-bottom: -60px;
+    margin-bottom: -50px;
 }
 .logo:hover img {
    background-color: plum;
     cursor: pointer;
 }
-
-.anchors{
-    margin-left: 850px
-}
+ .anchors{
+     margin-left: 350px 
+   
+         
+}  
 /* ========================introSection =========================================*/
 .introSection{
-    display:table
+    /* display:table; */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 .introSection .col1 .heading {
-    font-size: 30px;
+    font-size: 25px;
     color: purple;
     font-family: sans-serif;
 }
 p{ 
-    margin-top: 20px;
+    margin-top: 10px;
     color: white;
-    font-size: 25px;
+    font-size: 18px;
 }
 .introSection .col1 {
     width: 49%;
     display: table-cell;
-    vertical-align: middle;
-    padding: 100px;
+    vertical-align: center;
+    padding: 50px;
 }
 .introSection .col2  {
     width: 49%;
     text-align: center;
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: center;
 }
 /* ===========================================intro Section =================================================*/
 .introSection{
-    margin: auto;
+     margin: auto; 
     margin-top: 20px;
     width: 90%;
 }
 .introSection h1 {
+    margin-left: 50px;
     text-align: center;
     color: purple;
-    font-size: 30px;
 }
          /*=================== cards section ================================*/
 .cardsSection {
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 .cardsSection .card{
      width: 26%;
@@ -109,4 +115,71 @@ p{
   margin: 10px 0;
   cursor: pointer;
   border-radius: 5px;
+}
+
+/* Example media query for tablets (768px and below) */
+@media (max-width: 768px) {
+    /* Adjust the navigation */
+    nav {
+        padding: 0px;
+        text-align: center;
+    }
+    .anchors {
+        margin-left: 0;
+        display:inline-block;
+    }
+    .anchors a {
+        display:inline-block;
+        margin: 15px 0;
+        gap: 10px;
+    }
+    /* Stack intro section columns vertically */
+    .introSection {
+        flex-direction: column;
+        text-align: center;
+    }
+    .introSection .col1, .introSection .col2 {
+        width: 100%;
+        padding: 10px;
+    }
+    /* Stack cards vertically */
+    .cardsSection .card {
+        width: 80%;
+        margin: 20px auto;
+    }
+}
+
+/* Example media query for mobile phones (480px and below) */
+@media (max-width: 480px) {
+    /* Reduce font sizes */
+     nav a {
+        font-size: 16px;
+        margin: 0 20px 0 0;
+    } 
+    .introSection .col1 .heading {
+        margin-top: 35px;
+        font-size: 20px;
+    }
+    p {
+        font-size: 16px;
+    }
+    /* Stack intro section columns vertically */
+    .introSection {
+        flex-direction: column;
+        text-align: center;
+    }
+    .introSection .col1, .introSection .col2 {
+        width: 100%;
+        padding: 5px;
+    }
+    /* Stack cards vertically */
+    .cardsSection .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+    /* Adjust button sizes */
+    .cardsSection .card button {
+        font-size: 14px;
+        padding: 5px;
+    }
 }
